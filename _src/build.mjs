@@ -9,7 +9,7 @@ import { createHash } from 'node:crypto';
 
 import { plain, text, tbcLog, setCurrentPage } from './lib.mjs';
 import { site, products, languages } from './data.mjs';
-import { page, assetVersion } from './templates.mjs';
+import { page, assetVersion, thaliAssets } from './templates.mjs';
 import * as pages from './pages.mjs';
 import {
   createTranslator, loadDictionary, translateHtml, makeTagFn, switcherHtml, localizeShell,
@@ -36,6 +36,7 @@ const PHOTO_EXT = ['.webp', '.avif', '.jpg', '.jpeg', '.png'];
 const manifestFile = join(ROOT, '_src/photos/manifest.json');
 const manifest = existsSync(manifestFile) ? JSON.parse(readFileSync(manifestFile, 'utf8')).images || {} : {};
 let photos = 0;
+thaliAssets.plate = existsSync(join(ROOT, 'assets/img/thali/plate.webp')) ? 'assets/img/thali/plate.webp' : null;
 for (const p of products) {
   const ext = PHOTO_EXT.find((e) => existsSync(join(ROOT, 'assets/img/products', p.slug + e)));
   p.photo = ext ? `assets/img/products/${p.slug}${ext}` : null;
@@ -46,6 +47,7 @@ for (const p of products) {
   const shareExt = ['.jpg', '.png'].find((e) => existsSync(join(ROOT, 'assets/img/share', p.slug + e)));
   p.share = shareExt ? `assets/img/share/${p.slug}${shareExt}` : null;
   if (ext) photos++;
+  p.thaliImg = existsSync(join(ROOT, 'assets/img/thali', p.slug + '.webp')) ? `assets/img/thali/${p.slug}.webp` : null;
   out(`assets/img/placeholders/${p.slug}.svg`, placeholderSVG(p));
 }
 
@@ -60,14 +62,7 @@ out('assets/img/grain.svg', `<svg xmlns="http://www.w3.org/2000/svg" width="240"
 </svg>
 `);
 
-out('assets/img/favicon.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-<rect width="40" height="40" rx="9" fill="#11241a"/>
-<circle cx="20" cy="20" r="15.5" fill="none" stroke="#e4a11b" stroke-width="1.6"/>
-<path d="M13 27C13 19 18.2 13 27 13C27 21 21.8 27 13 27Z" fill="#eef0e6"/>
-<path d="M13.9 26.1L22.6 17.4" stroke="#11241a" stroke-width="1.2" stroke-linecap="round"/>
-</svg>
-`);
-
+// favicons and app icons come from the official logo: python _src/make-brand.py
 out('assets/img/products/README.txt', `The images in this folder are generated. Do not edit them here.
 
 Originals live in _src/photos/ (one per product, named after the product slug).
@@ -210,7 +205,6 @@ out('site.webmanifest', JSON.stringify({
   icons: [
     { src: 'assets/img/icon-192.png', sizes: '192x192', type: 'image/png' },
     { src: 'assets/img/icon-512.png', sizes: '512x512', type: 'image/png' },
-    { src: 'assets/img/favicon.svg', sizes: 'any', type: 'image/svg+xml' },
   ],
 }, null, 2) + '\n');
 

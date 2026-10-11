@@ -53,7 +53,9 @@ _src/photo-prompts.mjs the prompts used to generate the product images
 _src/process-photos.py crops the originals so the bowl sits the same in every image, and writes the WebP files
 _src/build.mjs         builds everything above
 _src/check.mjs         link, ID, alt-text and ARIA checks
-_src/make-images.mjs   renders og-image.png, the icons and the share cards with headless Chrome or Edge
+_src/make-images.mjs   renders og-image.png and the share cards with headless Chrome or Edge
+_src/make-brand.py     makes the site logo and the icons from _src/brand/logo-original.png
+_src/process-thali.py  cuts the hero bowls and tray out of _src/photos/thali/
 .github/workflows/deploy.yml   optional GitHub Pages deployment (runs only when started by hand)
 docs/content-to-confirm.md     generated list of everything still to confirm with the client
 docs/ai-image-brief.md         art direction and prompts for the product images
@@ -93,6 +95,19 @@ The 404 page is English only. A first-time visitor on an English page whose brow
 - **Add a language** (French, Spanish...): add a line to `languages` in `_src/data.mjs`, create `_src/i18n/<code>.json`, and build. `_src/i18n/_missing.<code>.json` then lists every string to translate. Scripts that need extra fonts (Arabic, Hindi) are declared in `languages` too.
 
 **These translations are first drafts.** They were produced with AI and checked for structure and consistency, but not by a native speaker. Specifications, trade terms and the privacy note carry commercial and legal weight, so have a fluent reader of each language review them before the languages are promoted. Translated pages carry a note saying that the English version is the reference.
+
+## Logo and hero
+
+**The logo** is the client's official logo (the airplane over a globe, "Deva Exim INC., Trade at ease"). It is used only where the brand needs to be identified:
+
+- the header, the mobile menu and the footer, on a light plate because it is a flat image on white;
+- the letterhead of the printed product spec sheets;
+- the link-preview images shown when a page is shared;
+- the browser tab icon and phone home-screen icons, which use the globe-and-plane part alone.
+
+The original is kept untouched in `_src/brand/logo-original.png`. `python _src/make-brand.py` makes `assets/img/logo.png` from it, which only removes the stray dotted-grid pattern baked into the original's white background, and makes the icons. To change the logo, replace the original and run that command, then `node _src/build.mjs`.
+
+**The hero** (the brass tray of nine bowls on the home page) is made of photographs, so it matches the product photos. The tray and each bowl were generated with the same model and lighting as the product images (prompts in `_src/photo-prompts.mjs`; originals in `_src/photos/thali/`). `python _src/process-thali.py` finds each bowl, cuts it out as a circle and writes `assets/img/thali/*.webp`; the build uses those files, and falls back to the drawn bowls when they are missing. Add or change a bowl by replacing its original in `_src/photos/thali/` and running that script.
 
 ## Product images
 
@@ -162,7 +177,7 @@ If the brand or the hero changes, regenerate the share image, icons and product 
   - `devaexim.in` and `devaexim.co.in`: not found, so they appear to be available.
   - `devaexim.com`: registered since February 2024, expiring February 2027. Ask the client whether it is theirs.
 - [ ] **Confirm the sales phone number.** The online directory listings show the directory's own numbers; the site uses +91 94038 89604, which came from the old website.
-- [ ] **Logo.** The leaf-in-a-ring mark is a placeholder. Swap in the client's logo if they have one (`logoMark` in `_src/templates.mjs`, and `favicon.svg` in `_src/build.mjs`).
+- [ ] **Logo.** The site uses the client's official logo. It was supplied at 556 × 160 px, which is small, so ask for a higher-resolution or vector (SVG) file when possible. The logo is flat on a white background, so it sits on a light plate in the dark header and footer; a version with a transparent background would look cleaner.
 - [ ] **Have the client approve the product images.** They are AI-generated and captioned "Representative image". Replace them with photographs of real lots when possible (see Product images above).
 - [ ] Optionally set a form endpoint so enquiries arrive without relying on an email app.
 - [ ] After going live:

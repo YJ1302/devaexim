@@ -268,7 +268,7 @@ export function product(ctx, p) {
 <section class="product-hero dark">
   <div class="container">
     <div class="print-only letterhead">
-      <div><strong>${site.name}</strong><br>Herbal and spice powders, Pune, India</div>
+      <div><img class="print-logo" src="${ctx.root}assets/img/logo.png" alt="Deva Exim INC" width="556" height="160"></div>
       <div>${site.address.line1}, ${site.address.line2}<br>${site.address.locality} ${site.address.postalCode}, ${site.address.region}, India<br>${plain(site.phone.display)}, ${plain(site.email)}, GSTIN ${site.gstin}</div>
     </div>
     ${breadcrumb([['Home', `${ctx.root}index.html`], ['Products', `${ctx.root}products.html`], [cat, `${ctx.root}products.html#${p.category}`], [p.name]])}

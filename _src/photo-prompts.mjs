@@ -82,3 +82,18 @@ export const promptFor = (slug) => TEMPLATE(PRODUCTS[slug]);
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   for (const slug of Object.keys(PRODUCTS)) console.log(`\n=== ${slug} ===\n${promptFor(slug)}`);
 }
+
+// ---------- hero thali: bowl-only images, cut out as circles by process-thali.py ----------
+
+export const THALI_MODEL = { model: 'gemini-3-pro-image-preview', aspect_ratio: '1:1', image_size: '2K' };
+export const THALI_SLUGS = ['turmeric-powder', 'moringa-powder', 'shatavari-powder', 'neem-powder', 'ashwagandha-powder', 'tulsi-powder', 'ginger-powder', 'brahmi-powder', 'triphala-powder'];
+
+export const bowlPrompt = (slug) => `Overhead product photograph, camera directly above at exactly 90 degrees, so the bowl appears as a perfect circle. One round, hand-hammered brass katori (a small Indian bowl about 5 cm deep, with gently curved sides, a narrow rolled rim, visible hammer marks and a soft, warm golden patina; not a flat plate) is perfectly centred and fills about 86% of the square frame, with an even margin on every side.
+
+Contents: ${PRODUCTS[slug].contents}
+
+Nothing else is in the frame: no garnish, no loose spill, no props, no spoon. Background: plain matte, warm off-white limestone. Light: soft, diffused natural daylight from the upper left, with a soft shadow falling to the lower right. True-to-life natural colour, not oversaturated. Photorealistic editorial ingredient photography, sharp focus across the whole bowl.
+
+Strictly no text, letters, labels, logos, hands, people or extra bowls.`;
+
+export const platePrompt = `Overhead photograph, camera directly above at exactly 90 degrees. One large, round, hand-hammered brass thali (a broad, shallow serving tray with a gently raised rolled rim, visible hammer marks and a warm golden-brown aged patina, slightly darker toward the rim) is perfectly centred and fills about 94% of the square frame. The tray is completely empty and bare: nothing on it. Background: plain matte, near-black dark green. Light: soft, diffused natural daylight from the upper left. Photorealistic. Strictly no text, no objects, no bowls, no food, no hands.`;

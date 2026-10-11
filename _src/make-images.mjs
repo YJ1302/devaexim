@@ -1,4 +1,4 @@
-// Renders the social-share image (1200x630) and app icons to PNG with a headless
+// Renders the social-share image (1200x630) and the per-product link cards to PNG with a headless
 // Chromium browser (Edge or Chrome), using the site's own CSS and hero thali.
 //   node _src/make-images.mjs
 // Run after node _src/build.mjs. Only needed when the brand or hero changes.
@@ -9,7 +9,7 @@ import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
-import { thali, logoMark } from './templates.mjs';
+import { thali, thaliAssets } from './templates.mjs';
 import { products } from './data.mjs';
 import { plain } from './lib.mjs';
 
@@ -51,29 +51,26 @@ function shoot(name, width, height, body, extraCss = '', outDir = 'assets/img') 
   return out;
 }
 
+// the hero uses the photographic tray and bowls when they exist (the build sets the same flags)
+thaliAssets.plate = existsSync(join(ROOT, 'assets/img/thali/plate.webp')) ? 'assets/img/thali/plate.webp' : null;
+for (const p of products) p.thaliImg = existsSync(join(ROOT, 'assets/img/thali', p.slug + '.webp')) ? `assets/img/thali/${p.slug}.webp` : null;
+
+const logoFile = pathToFileURL(join(ROOT, 'assets/img/logo.png')).href;
+const logoPlate = (h) => `<img src="${logoFile}" alt="" style="display:block;height:${h}px;width:auto;padding:5px 12px;border-radius:11px;background:#fff">`;
+
 // Social share image: headline on the left, the thali on the right.
 const og = `<div class="dark" style="position:relative;width:1200px;height:630px;box-sizing:border-box;padding:64px 72px;display:grid;grid-template-columns:1fr 470px;gap:40px;align-items:center;
   background:radial-gradient(700px 500px at 82% 50%,rgba(228,161,27,.16),transparent 62%),radial-gradient(500px 400px at 0% 100%,rgba(59,115,80,.35),transparent 70%),#11241a">
   <div style="display:grid;gap:28px;align-content:center">
-    <div class="brand" style="gap:14px">${logoMark().s.replace('class="brand-mark"', 'class="brand-mark" style="width:52px;height:52px"')}<span class="brand-name" style="font-size:34px">Deva Exim</span></div>
+    <div>${logoPlate(70)}</div>
     <h1 class="display" style="font-size:76px;line-height:1;max-width:11ch">The colours of India, finely ground.</h1>
     <p style="font-size:25px;color:#b9c4b4;margin:0;max-width:24ch;line-height:1.35">Ayurvedic herb and spice powders, exported from Pune from 25 kg.</p>
   </div>
-  <div style="width:470px">${thali({ root: '../' }).s}</div>
+  <div style="width:470px">${thali({ root: pathToFileURL(ROOT).href + '/' }).s}</div>
 </div>`;
 shoot('og-image', 1200, 630, og, '.thali-caption,.thali-hint{display:none}.thali{width:470px}');
 
-// App icons: the mark on forest green. iOS masks its own corners, so no radius here.
-const icon = (size) => `<div style="width:${size}px;height:${size}px;display:grid;place-items:center;background:#11241a">
-  <svg viewBox="0 0 40 40" width="${Math.round(size * 0.72)}" height="${Math.round(size * 0.72)}">
-    <circle cx="20" cy="20" r="15.5" fill="none" stroke="#e4a11b" stroke-width="1.6"/>
-    <path d="M13 27C13 19 18.2 13 27 13C27 21 21.8 27 13 27Z" fill="#eef0e6"/>
-    <path d="M13.9 26.1L22.6 17.4" stroke="#11241a" stroke-width="1.2" stroke-linecap="round"/>
-  </svg></div>`;
-shoot('apple-touch-icon', 180, 180, icon(180));
-shoot('icon-192', 192, 192, icon(192));
-shoot('icon-512', 512, 512, icon(512));
-
+// App icons and favicons are made from the official logo by python _src/make-brand.py
 // Per-product share cards (link previews on WhatsApp, LinkedIn, X...), for products with a photo.
 const shared = [];
 for (const p of products) {
@@ -82,7 +79,7 @@ for (const p of products) {
   const card = `<div class="dark" style="width:1200px;height:630px;display:grid;grid-template-columns:1fr 504px;
     background:radial-gradient(600px 420px at 0% 100%,rgba(59,115,80,.35),transparent 70%),#11241a">
     <div style="display:grid;align-content:space-between;padding:56px 56px 52px 64px">
-      <div class="brand" style="gap:12px">${logoMark().s.replace('class="brand-mark"', 'class="brand-mark" style="width:44px;height:44px"')}<span class="brand-name" style="font-size:28px">Deva Exim</span></div>
+      <div>${logoPlate(58)}</div>
       <div style="display:grid;gap:10px">
         <p class="deva" style="font-size:38px;color:#e4a11b;margin:0">${p.sanskrit}</p>
         <h1 style="font-size:74px;line-height:1;font-variation-settings:'SOFT' 100;margin:0">${p.name}</h1>

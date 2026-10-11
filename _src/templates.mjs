@@ -27,12 +27,9 @@ const ICONS = {
 export const icon = (name, cls = 'icon') =>
   raw(`<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name]}</svg>`);
 
-export const logoMark = (cls = 'brand-mark') => raw(`<svg class="${cls}" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-  <circle cx="20" cy="20" r="18.25" fill="none" stroke="#e4a11b" stroke-width="1.5"/>
-  <path d="M11.5 28.5C11.5 18.5 18 11.5 28.5 11.5C28.5 21.5 22 28.5 11.5 28.5Z" fill="currentColor"/>
-  <path d="M12.6 27.4L23.2 16.8" stroke="#11241a" stroke-width="1.3" stroke-linecap="round"/>
-  <circle cx="13.6" cy="13.6" r="1.9" fill="#e4a11b"/>
-</svg>`);
+/** The official logo, on a light plate so it reads on the dark header and footer. */
+export const brandLogo = (ctx) =>
+  raw(`<img class="brand-logo" src="${ctx.root}assets/img/logo.png" alt="Deva Exim INC" width="556" height="160">`);
 
 // ---------- URLs & images ----------
 
@@ -92,20 +89,25 @@ export function productCard(ctx, p, headingLevel = 'h2') {
 const RING = ['moringa-powder', 'shatavari-powder', 'neem-powder', 'ashwagandha-powder', 'tulsi-powder', 'ginger-powder', 'brahmi-powder', 'triphala-powder'];
 const CENTRE = 'turmeric-powder';
 
+// Set by the build: path of the photographic tray, when it exists. Bowl photos are p.thaliImg.
+export const thaliAssets = { plate: null };
+
 export function thali(ctx) {
-  const r = 33.6;
+  const r = 32.3;
   const bowls = RING.map((slug, i) => {
     const a = (-90 + i * 45) * (Math.PI / 180);
     return { p: bySlug[slug], x: 50 + r * Math.cos(a), y: 50 + r * Math.sin(a), i: i + 1 };
   });
   const centre = bySlug[CENTRE];
-  const bowl = ({ p, x, y, i }, extra = '') => html`<button class="katori${raw(extra)}" type="button" data-slug="${p.slug}"
+  const bowl = ({ p, x, y, i }, extra = '') => html`<button class="katori${raw(extra)}${raw(p.thaliImg ? ' katori--photo' : '')}" type="button" data-slug="${p.slug}"
       style="--x:${x.toFixed(2)}%;--y:${y.toFixed(2)}%;--c:${p.hex};--i:${i}" aria-pressed="false" aria-describedby="thali-hint">
-      <span class="katori__powder"></span><span class="visually-hidden">${p.name}</span>
+      ${p.thaliImg ? html`<img class="katori__img" src="${ctx.root}${p.thaliImg}" alt="" width="400" height="400" decoding="async">` : html`<span class="katori__powder"></span>`}<span class="visually-hidden">${p.name}</span>
     </button>`;
   return html`<div class="hero-art">
     <div class="thali" data-thali data-initial="${CENTRE}" role="group" aria-label="Our products, as powders in brass bowls">
-      <div class="thali__plate" aria-hidden="true"></div>
+      ${thaliAssets.plate
+        ? html`<div class="thali__plate thali__plate--photo" aria-hidden="true"><img src="${ctx.root}${thaliAssets.plate}" alt="" width="1200" height="1200" decoding="async"></div>`
+        : html`<div class="thali__plate" aria-hidden="true"></div>`}
       ${bowl({ p: centre, x: 50, y: 50, i: 0 }, ' katori--center')}
       ${bowls.map((b) => bowl(b))}
     </div>
@@ -153,7 +155,7 @@ function header(ctx) {
     html`<li><a href="${ctx.root}${href}"${raw(ctx.nav === key ? ' aria-current="page"' : '')}>${label}</a></li>`);
   return html`<header class="site-header" data-header>
   <div class="container header-row">
-    <a class="brand" href="${ctx.root}index.html">${logoMark()}<span class="brand-name">Deva Exim</span><span class="visually-hidden">, home</span></a>
+    <a class="brand" href="${ctx.root}index.html">${brandLogo(ctx)}<span class="visually-hidden">, home</span></a>
     <nav class="site-nav" aria-label="Main">
       <ul>${items}</ul>
     </nav>
@@ -177,7 +179,7 @@ function footer(ctx) {
   return html`<footer class="site-footer dark">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="${ctx.root}index.html">${logoMark()}<span class="brand-name">Deva Exim</span><span class="visually-hidden">, home</span></a>
+      <a class="brand" href="${ctx.root}index.html">${brandLogo(ctx)}<span class="visually-hidden">, home</span></a>
       <p>Ayurvedic herb and spice powders from Pune, India. Supplier, exporter, trader and distributor since ${site.founded}.</p>
     </div>
     <nav aria-labelledby="footer-products">
@@ -226,7 +228,7 @@ function dialogs(ctx) {
 </dialog>
 <dialog class="menu" id="site-menu" aria-label="Menu">
   <div class="menu__head">
-    <a class="brand" href="${ctx.root}index.html">${logoMark()}<span class="brand-name">Deva Exim</span><span class="visually-hidden">, home</span></a>
+    <a class="brand" href="${ctx.root}index.html">${brandLogo(ctx)}<span class="visually-hidden">, home</span></a>
     <button class="icon-btn" type="button" data-close aria-label="Close menu">${icon('close')}</button>
   </div>
   <nav class="menu__nav" aria-label="Main"><ul>${items}</ul></nav>
@@ -281,7 +283,8 @@ ${opts.noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonica
 <meta property="og:image" content="${esc(ogImage)}">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="${ctx.root}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${ctx.root}assets/img/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="${ctx.root}assets/img/favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="${ctx.root}assets/img/apple-touch-icon.png">
 <link rel="manifest" href="${ctx.root}site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
