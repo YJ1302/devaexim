@@ -369,14 +369,14 @@ a.chip:hover { border-color: var(--line-strong); background: #fff; }
 @media (min-width: 640px) {
   .list-btn__label { display: inline; }
 }
-@media (min-width: 1060px) {
+@media (min-width: 1160px) {
   .site-nav { display: block; }
   .menu-btn { display: none; }
   .header-cta { display: inline-flex; }
   .header-actions { margin-inline-start: 0.5rem; }
 }
 /* Between tablet and wide desktop the nav needs the room: show the count only. */
-@media (min-width: 1060px) and (max-width: 1239px) {
+@media (min-width: 1160px) and (max-width: 1359px) {
   .list-btn__label { display: none; }
   .site-nav a { padding-inline: 0.65rem; }
 }
@@ -1464,3 +1464,8 @@ dialog::backdrop { background: rgba(9, 18, 13, 0.55); backdrop-filter: blur(2px)
 .spec-table { table-layout: fixed; }
 .spec-table th, .spec-table td, .def-list dd, .card__title, .index-row__name, .chip { overflow-wrap: anywhere; }
 :lang(de) { hyphens: auto; }
+
+/* buttons with long labels (Spanish, French, German) wrap on small screens instead of widening the page */
+@media (max-width: 559px) {
+  .btn { white-space: normal; text-align: center; }
+}

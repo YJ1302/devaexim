@@ -57,6 +57,8 @@ export const site = {
 export const languages = [
   { code: 'en', name: 'English', short: 'EN', htmlLang: 'en-IN', ogLocale: 'en_IN', dir: 'ltr' },
   { code: 'de', name: 'Deutsch', short: 'DE', htmlLang: 'de', ogLocale: 'de_DE', dir: 'ltr' },
+  { code: 'fr', name: 'Français', short: 'FR', htmlLang: 'fr', ogLocale: 'fr_FR', dir: 'ltr' },
+  { code: 'es', name: 'Español', short: 'ES', htmlLang: 'es', ogLocale: 'es_ES', dir: 'ltr' },
   { code: 'ar', name: 'العربية', short: 'AR', htmlLang: 'ar', ogLocale: 'ar_AE', dir: 'rtl',
     font: 'family=Noto+Naskh+Arabic:wght@400..600&family=Noto+Sans+Arabic:wght@400..600' },
   { code: 'hi', name: 'हिन्दी', short: 'HI', htmlLang: 'hi', ogLocale: 'hi_IN', dir: 'ltr',

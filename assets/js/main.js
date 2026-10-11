@@ -233,7 +233,7 @@
       if (!caption) return;
       $('[data-cap-deva]', caption).textContent = p.deva;
       $('[data-cap-name]', caption).textContent = p.name;
-      $('[data-cap-bot]', caption).innerHTML = '<i>' + escapeHTML(p.bot) + '</i>, ' + escapeHTML(isEnglish ? p.part.toLowerCase() : p.part);
+      $('[data-cap-bot]', caption).innerHTML = '<i>' + escapeHTML(p.bot) + '</i>, ' + escapeHTML(/^de/.test(doc.documentElement.lang) ? p.part : p.part.toLowerCase());   // German nouns keep their capital
       var link = $('[data-cap-link]', caption);
       link.setAttribute('href', root + p.url);
       link.textContent = t('See the {short} specification', { short: p.short });

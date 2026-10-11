@@ -7,5 +7,7 @@ The exact missing strings are written to `_src/i18n/_missing.<code>.json` on eve
 | Language | Translated entries | Strings still in English |
 |---|---|---|
 | Deutsch (de) | 483 | 0 |
+| Français (fr) | 483 | 0 |
+| Español (es) | 483 | 0 |
 | العربية (ar) | 483 | 0 |
 | हिन्दी (hi) | 483 | 0 |

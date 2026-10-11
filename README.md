@@ -77,12 +77,11 @@ Anything not yet confirmed by the client is wrapped in `tbc(value, note)` in the
 
 ## Languages
 
-The site is in **English, Deutsch, العربية (Arabic) and हिन्दी (Hindi)**. Visitors choose a language from the dropdown in the header (inside the menu on phones). Each language has its own copy of every page, so the choice survives a shared link and Google can index each version:
+The site is in **English, Deutsch (German), Français (French), Español (Spanish), العربية (Arabic) and हिन्दी (Hindi)**. Visitors choose a language from the dropdown in the header (inside the menu on phones). Each language has its own copy of every page, so the choice survives a shared link and Google can index each version:
 
 - English: `/products/neem-powder.html`
-- German: `/de/products/neem-powder.html`
+- German: `/de/products/neem-powder.html`, and likewise `/fr/…` (French), `/es/…` (Spanish), `/hi/…` (Hindi)
 - Arabic: `/ar/…` (laid out right to left)
-- Hindi: `/hi/…`
 
 The 404 page is English only. A first-time visitor on an English page whose browser is set to German, Arabic or Hindi sees a small, dismissible "also available in…" bar; nothing redirects automatically.
 
