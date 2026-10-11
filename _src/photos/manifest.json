@@ -1,0 +1,16 @@
+{
+  "about": "Originals of the product images. Each entry says where the image came from. Images marked \"ai\" are shown on the site with the caption \"Representative image\". When you replace one with a real photograph of the product, change its source to \"photo\" (or delete the entry) and run: python _src/process-photos.py, then node _src/build.mjs",
+  "generator": "Google Gemini 3 Pro Image (gemini-3-pro-image-preview), 4:5 at 2K, 10 October 2026, prompts in _src/photo-prompts.mjs",
+  "images": {
+    "ashwagandha-powder": { "source": "ai", "alt": "Ashwagandha powder in a brass bowl, with dried ashwagandha roots" },
+    "shatavari-powder": { "source": "ai", "alt": "Shatavari powder in a brass bowl, with dried shatavari roots" },
+    "neem-powder": { "source": "ai", "alt": "Neem leaf powder in a brass bowl, with a fresh neem twig" },
+    "tulsi-powder": { "source": "ai", "alt": "Tulsi powder in a brass bowl, with a flowering holy basil sprig" },
+    "brahmi-powder": { "source": "ai", "alt": "Brahmi powder in a brass bowl, with a fresh brahmi sprig" },
+    "triphala-powder": { "source": "ai", "alt": "Triphala powder in a brass bowl, with dried amla, haritaki and bibhitaki fruits" },
+    "moringa-powder": { "source": "ai", "alt": "Moringa leaf powder in a brass bowl, with a fresh moringa sprig" },
+    "moringa-dried-leaves": { "source": "ai", "alt": "Dried moringa leaves in a brass bowl, with a fresh moringa sprig" },
+    "turmeric-powder": { "source": "ai", "alt": "Turmeric powder in a brass bowl, with fresh turmeric roots, one cut open" },
+    "ginger-powder": { "source": "ai", "alt": "Dry ginger powder in a brass bowl, with pieces of dried ginger" }
+  }
+}

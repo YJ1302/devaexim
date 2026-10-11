@@ -1,0 +1,15 @@
+# Build output: regenerate with `node _src/build.mjs`
+dist/
+
+# AI renders that were not chosen for the site
+_src/photos/alternates/
+
+# Local tool settings
+.claude/settings.local.json
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.tmp

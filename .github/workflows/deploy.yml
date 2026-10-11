@@ -1,0 +1,48 @@
+# Builds the site and publishes dist/ to GitHub Pages.
+#
+# One-time setup: repository Settings > Pages > Build and deployment > Source: "GitHub Actions".
+# Then deploy from the Actions tab: "Deploy site" > "Run workflow".
+# To deploy automatically on every push to main, uncomment the two "push" lines below.
+
+name: Deploy site
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build and check
+        run: |
+          node _src/build.mjs
+          node _src/check.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

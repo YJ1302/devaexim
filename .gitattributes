@@ -1,0 +1,9 @@
+# Keep text files LF everywhere (the build and the CI run on any OS)
+* text=auto eol=lf
+
+# Binary assets
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.webp binary
+*.avif binary
