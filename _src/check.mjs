@@ -53,7 +53,9 @@ for (const file of htmlFiles(ROOT)) {
     }
     const path = url.split(/[?#]/)[0];
     if (!path) continue;
-    const target = is404 && path.startsWith('/') ? join(ROOT, path) : join(dirname(file), path);
+    // Root-relative links (404 page) are resolved against the site root, minus any SITE_BASE prefix.
+    const base = process.env.SITE_BASE ? `/${process.env.SITE_BASE.replace(/^\/+|\/+$/g, '')}/` : '/';
+    const target = path.startsWith('/') ? join(ROOT, path.startsWith(base) ? path.slice(base.length) : path) : join(dirname(file), path);
     if (!existsSync(target)) report(file, `broken ${m[1]}: ${url}`);
   }
 

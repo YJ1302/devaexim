@@ -1,15 +1,17 @@
 # Builds the site and publishes dist/ to GitHub Pages.
 #
 # One-time setup: repository Settings > Pages > Build and deployment > Source: "GitHub Actions".
-# Then deploy from the Actions tab: "Deploy site" > "Run workflow".
-# To deploy automatically on every push to main, uncomment the two "push" lines below.
+# Deploys on every push to main, or by hand from the Actions tab ("Deploy site" > "Run workflow").
+#
+# When the real domain is ready: set SITE_URL to it (for example https://www.example.in) and
+# SITE_BASE to "/" below, and add the domain in Settings > Pages > Custom domain.
 
 name: Deploy site
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches: [main]
+  push:
+    branches: [main]
 
 permissions:
   contents: read
@@ -34,11 +36,16 @@ jobs:
           node-version: 20
 
       - name: Build and check
+        env:
+          SITE_URL: https://yj1302.github.io/devaexim
+          SITE_BASE: /devaexim/
         run: |
           node _src/build.mjs
           node _src/check.mjs
 
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:

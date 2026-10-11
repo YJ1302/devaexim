@@ -13,6 +13,12 @@ import { page, assetVersion } from './templates.mjs';
 import * as pages from './pages.mjs';
 import { placeholderSVG } from './placeholder.mjs';
 
+// Optional deploy settings (the GitHub Pages workflow sets both for a project site):
+//   SITE_URL   public address with no trailing slash, e.g. https://yj1302.github.io/devaexim
+//   SITE_BASE  path the site is served from, e.g. /devaexim/ (default: /)
+if (process.env.SITE_URL) site.url = process.env.SITE_URL.replace(/\/+$/, '');
+const BASE = process.env.SITE_BASE ? `/${process.env.SITE_BASE.replace(/^\/+|\/+$/g, '')}/`.replace(/^\/\/$/, '/') : '/';
+
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const out = (rel, content) => {
   const file = join(ROOT, rel);
@@ -86,7 +92,7 @@ const routes = [
   { path: 'about.html', root: '', nav: 'about', fn: pages.about },
   { path: 'contact.html', root: '', nav: 'contact', fn: pages.contact },
   { path: 'privacy.html', root: '', nav: '', fn: pages.privacy },
-  { path: '404.html', root: '/', nav: '', fn: pages.notFound, noSitemap: true },
+  { path: '404.html', root: BASE, nav: '', fn: pages.notFound, noSitemap: true },
 ];
 
 for (const r of routes) {
