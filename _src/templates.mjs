@@ -74,7 +74,7 @@ export function enquireButton(p, cls = 'btn-text') {
 export function productCard(ctx, p, headingLevel = 'h2') {
   const keywords = [p.name, p.short, text(p.botanical), p.sanskritLatin, p.sanskrit, ...(p.aka || []), categoryName(p.category), p.part].join(' ');
   const H = raw(headingLevel);
-  return html`<article class="card" data-card data-cat="${p.category}" data-keywords="${keywords}" style="--c:${p.hex}">
+  return html`<article class="card" data-card data-cat="${p.category}" data-keywords="${keywords}" data-name="${p.name}" style="--c:${p.hex}">
     <a class="card__media" href="${ctx.root}${productUrl(p)}" tabindex="-1" aria-hidden="true">
       ${productImage(ctx, p, { sizes: SIZES.card, alt: '' })}
     </a>
@@ -158,6 +158,7 @@ function header(ctx) {
       <ul>${items}</ul>
     </nav>
     <div class="header-actions">
+      <!--LANG:header-->
       <button class="list-btn" type="button" data-open-drawer aria-haspopup="dialog">
         ${icon('list')}<span class="list-btn__label">Enquiry list</span>
         <span class="count" data-count aria-hidden="true">0</span>
@@ -204,6 +205,7 @@ function footer(ctx) {
   <div class="container footer-base">
     <p>© ${year} ${site.name}. All rights reserved.</p>
     <p>Traditional uses described on this site are for information. They are not medical claims.</p>
+    <!--LANG:note-->
   </div>
 </footer>`;
 }
@@ -228,6 +230,7 @@ function dialogs(ctx) {
     <button class="icon-btn" type="button" data-close aria-label="Close menu">${icon('close')}</button>
   </div>
   <nav class="menu__nav" aria-label="Main"><ul>${items}</ul></nav>
+  <!--LANG:menu-->
   <div class="menu__foot">
     <a class="btn btn--haldi" href="${ctx.root}contact.html">Request a quote</a>
     <a class="btn btn--ghost" href="tel:${site.phone.tel}">${icon('phone')}Call ${plain(site.phone.display)}</a>
@@ -238,7 +241,7 @@ function dialogs(ctx) {
 
 function catalogueJson(ctx) {
   const data = products.map((p) => ({
-    slug: p.slug, name: p.name, short: p.short, deva: p.sanskrit, bot: botanicalShort(p),
+    slug: p.slug, name: p.name, en: p.name, short: p.short, enShort: p.short, deva: p.sanskrit, bot: botanicalShort(p),
     part: p.part, hex: p.hex, cat: p.category, img: productThumb(p), url: productUrl(p),
   }));
   return raw(`<script type="application/json" id="deva-catalogue">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`);

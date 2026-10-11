@@ -50,6 +50,19 @@ export const site = {
   formEndpoint: '',
 };
 
+// Site languages. English is the source; every other language gets its own copy of every page
+// under /<code>/ (for example /de/products.html), translated from _src/i18n/<code>.json.
+// To add a language: add it here, create _src/i18n/<code>.json, and run the build.
+// font: Google Fonts families loaded only on that language's pages.
+export const languages = [
+  { code: 'en', name: 'English', short: 'EN', htmlLang: 'en-IN', ogLocale: 'en_IN', dir: 'ltr' },
+  { code: 'de', name: 'Deutsch', short: 'DE', htmlLang: 'de', ogLocale: 'de_DE', dir: 'ltr' },
+  { code: 'ar', name: 'العربية', short: 'AR', htmlLang: 'ar', ogLocale: 'ar_AE', dir: 'rtl',
+    font: 'family=Noto+Naskh+Arabic:wght@400..600&family=Noto+Sans+Arabic:wght@400..600' },
+  { code: 'hi', name: 'हिन्दी', short: 'HI', htmlLang: 'hi', ogLocale: 'hi_IN', dir: 'ltr',
+    font: 'family=Noto+Sans+Devanagari:wght@400..600&family=Noto+Serif+Devanagari:wght@400..600' },
+];
+
 export const categories = [
   { id: 'herbal', name: 'Herbal powders', blurb: 'Classical Ayurvedic herbs, milled from dried roots, leaves and fruits.' },
   { id: 'spice', name: 'Spice powders', blurb: 'Two staples of the Indian kitchen, ground for food and wellness brands.' },

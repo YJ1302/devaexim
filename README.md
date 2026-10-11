@@ -33,6 +33,7 @@ Node 18 or newer is needed for the build; nothing has to be installed. Processin
 index.html, products.html, quality.html, export.html,
 about.html, contact.html, privacy.html, 404.html      generated pages (do not edit by hand)
 products/*.html                                       one generated page per product
+de/, ar/, hi/                                         the same pages in German, Arabic and Hindi (generated)
 assets/css/styles.css                                 all styles, including print styles for spec sheets
 assets/js/main.js                                     all behaviour (no libraries)
 assets/img/products/*.webp                            product images, 1600 and 800 px wide (generated from _src/photos)
@@ -44,6 +45,8 @@ dist/                  the public site only, ready to upload (generated, not in 
 _src/data.mjs          company details, products, terms, FAQ: edit content here
 _src/pages.mjs         page layouts and page copy
 _src/templates.mjs     shared header, footer, cards, thali, SEO tags
+_src/i18n.mjs          the translation engine
+_src/i18n/             translations, one JSON file per language
 _src/placeholder.mjs   product illustration generator
 _src/photos/           original product images, plus manifest.json (source and alt text of each)
 _src/photo-prompts.mjs the prompts used to generate the product images
@@ -71,6 +74,26 @@ Anything not yet confirmed by the client is wrapped in `tbc(value, note)` in the
 - `docs/content-to-confirm.md` lists every open item and the pages it appears on. Today there are 35. The file is regenerated on each build.
 - Adding **`?review`** to any page address (for example `index.html?review`) highlights each unconfirmed item in place. A panel lists the items, and clicking one jumps to it. Review mode stays on while you browse; `?review=off` turns it off. This is handy for walking the client through the site.
 - To confirm an item, replace `tbc('value', 'note')` with the confirmed value and rebuild.
+
+## Languages
+
+The site is in **English, Deutsch, العربية (Arabic) and हिन्दी (Hindi)**. Visitors choose a language from the dropdown in the header (inside the menu on phones). Each language has its own copy of every page, so the choice survives a shared link and Google can index each version:
+
+- English: `/products/neem-powder.html`
+- German: `/de/products/neem-powder.html`
+- Arabic: `/ar/…` (laid out right to left)
+- Hindi: `/hi/…`
+
+The 404 page is English only. A first-time visitor on an English page whose browser is set to German, Arabic or Hindi sees a small, dismissible "also available in…" bar; nothing redirects automatically.
+
+**How it works.** English is written once, in `_src/`. On every build, `_src/i18n.mjs` takes each finished English page and swaps its text for the translation in `_src/i18n/<code>.json`, which is a plain list of `"English text": "translation"`. So changing English wording means updating the same text in each language file; text with no translation stays in English and is listed in `docs/translation-gaps.md` after the build.
+
+- **Dynamic text** uses `{name}` gaps, for example `"Get a quote for {name}": "Angebot für {name} anfordern"`. Parts marked `[1]` are the highlighted "to be confirmed" details and must be kept in the translation.
+- **Names that never change** (botanical names, Sanskrit names, the address, codes) are kept as they are, via `_src/i18n/_keep.json`.
+- **The enquiry message** sent to Deva Exim is always in English, with the page language added, so the team can read it.
+- **Add a language** (French, Spanish...): add a line to `languages` in `_src/data.mjs`, create `_src/i18n/<code>.json`, and build. `_src/i18n/_missing.<code>.json` then lists every string to translate. Scripts that need extra fonts (Arabic, Hindi) are declared in `languages` too.
+
+**These translations are first drafts.** They were produced with AI and checked for structure and consistency, but not by a native speaker. Specifications, trade terms and the privacy note carry commercial and legal weight, so have a fluent reader of each language review them before the languages are promoted. Translated pages carry a note saying that the English version is the reference.
 
 ## Product images
 

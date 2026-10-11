@@ -13,3 +13,8 @@ Thumbs.db
 desktop.ini
 .vscode/
 *.tmp
+
+# Generated translation worklists
+_src/i18n/_missing.*.json
+_src/i18n/work/
+_src/i18n/_work.json

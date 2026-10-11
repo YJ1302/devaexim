@@ -4,6 +4,10 @@
 
   var doc = document;
   var root = doc.documentElement.getAttribute('data-root') || '';
+  // Translated pages sit one folder down: pages link relative to root, images and files to assetsRoot.
+  var assetsRoot = doc.documentElement.getAttribute('data-assets');
+  if (assetsRoot === null) assetsRoot = root;
+  var isEnglish = (doc.documentElement.lang || 'en').indexOf('en') === 0;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
@@ -14,6 +18,17 @@
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
+  }
+
+  // ---------- translations (embedded in translated pages; English pages have none) ----------
+
+  var strings = {};
+  try { strings = JSON.parse((doc.getElementById('deva-i18n') || {}).textContent || '{}'); } catch (e) { strings = {}; }
+  // t(text, vars) returns the translation of text if there is one; {name}-style gaps are filled from vars.
+  function t(text, vars) {
+    var out = Object.prototype.hasOwnProperty.call(strings, text) ? strings[text] : text;
+    if (vars) Object.keys(vars).forEach(function (k) { out = out.split('{' + k + '}').join(vars[k]); });
+    return out;
   }
 
   // ---------- catalogue (embedded in every page) ----------
@@ -136,7 +151,7 @@
       }
     });
     $$('[data-count-label]').forEach(function (el) {
-      el.textContent = list.length === 1 ? '1 product' : list.length + ' products';
+      el.textContent = list.length === 1 ? t('1 product') : t('{n} products', { n: list.length });
     });
     lastCount = list.length;
   }
@@ -148,8 +163,8 @@
     var foot = $('[data-drawer-foot]', drawer);
     if (!list.length) {
       body.innerHTML =
-        '<div class="drawer-empty"><p>Your list is empty. Add products from the catalogue, then send one enquiry for all of them.</p>' +
-        '<p><a class="btn btn--outline btn--sm" href="' + root + 'products.html">Browse the catalogue</a></p></div>';
+        '<div class="drawer-empty"><p>' + escapeHTML(t('Your list is empty. Add products from the catalogue, then send one enquiry for all of them.')) + '</p>' +
+        '<p><a class="btn btn--outline btn--sm" href="' + root + 'products.html">' + escapeHTML(t('Browse the catalogue')) + '</a></p></div>';
       if (foot) foot.hidden = true;
       return;
     }
@@ -157,9 +172,9 @@
     body.innerHTML = '<ul>' + list.map(function (slug) {
       var p = bySlug[slug];
       return '<li class="drawer-item">' +
-        '<img src="' + root + p.img + '" alt="" width="52" height="64" loading="lazy">' +
+        '<img src="' + assetsRoot + p.img + '" alt="" width="52" height="64" loading="lazy">' +
         '<div><a href="' + root + p.url + '">' + escapeHTML(p.name) + '</a><span class="bot">' + escapeHTML(p.bot) + '</span></div>' +
-        '<button class="icon-btn" type="button" data-remove="' + slug + '" aria-label="Remove ' + escapeHTML(p.name) + '">' +
+        '<button class="icon-btn" type="button" data-remove="' + slug + '" aria-label="' + escapeHTML(t('Remove {name}', { name: p.name })) + '">' +
         '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></li>';
     }).join('') + '</ul>';
   }
@@ -170,7 +185,7 @@
       if (!rm) return;
       var slug = rm.getAttribute('data-remove');
       enquiry.remove(slug);
-      toast(bySlug[slug].name + ' removed from your enquiry list.');
+      toast(t('{name} removed from your enquiry list.', { name: bySlug[slug].name }));
       var next = $('[data-remove]', drawer) || $('a', drawer);
       if (next) next.focus();
     });
@@ -190,11 +205,12 @@
     if (!p) return;
     if (enquiry.has(slug)) {
       enquiry.remove(slug);
-      toast(p.name + ' removed from your enquiry list.');
+      toast(t('{name} removed from your enquiry list.', { name: p.name }));
     } else {
       enquiry.add(slug);
       var n = enquiry.get().length;
-      toast(p.name + ' added. Your enquiry list has ' + (n === 1 ? '1 product.' : n + ' products.'));
+      toast(n === 1 ? t('{name} added. Your enquiry list has 1 product.', { name: p.name })
+        : t('{name} added. Your enquiry list has {n} products.', { name: p.name, n: n }));
     }
   });
 
@@ -217,10 +233,10 @@
       if (!caption) return;
       $('[data-cap-deva]', caption).textContent = p.deva;
       $('[data-cap-name]', caption).textContent = p.name;
-      $('[data-cap-bot]', caption).innerHTML = '<i>' + escapeHTML(p.bot) + '</i>, ' + escapeHTML(p.part.toLowerCase());
+      $('[data-cap-bot]', caption).innerHTML = '<i>' + escapeHTML(p.bot) + '</i>, ' + escapeHTML(isEnglish ? p.part.toLowerCase() : p.part);
       var link = $('[data-cap-link]', caption);
       link.setAttribute('href', root + p.url);
-      link.textContent = 'See the ' + p.short + ' specification';
+      link.textContent = t('See the {short} specification', { short: p.short });
       if (!reduceMotion) { caption.classList.remove('is-changing'); void caption.offsetWidth; caption.classList.add('is-changing'); }
     };
 
@@ -309,7 +325,7 @@
         if (!c.hidden) shown++;
       });
       filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-filter') === state.cat ? 'true' : 'false'); });
-      if (note) note.textContent = shown === cards.length ? 'Showing all ' + cards.length + ' products.' : 'Showing ' + shown + ' of ' + cards.length + ' products.';
+      if (note) note.textContent = shown === cards.length ? t('Showing all {n} products.', { n: cards.length }) : t('Showing {shown} of {n} products.', { shown: shown, n: cards.length });
       if (empty) empty.hidden = shown !== 0;
       if (fromUser && window.history && history.replaceState) {
         var url = new URL(window.location.href);
@@ -352,14 +368,14 @@
         qtyValues[slug] = { n: $('input', row).value, unit: $('select', row).value };
       });
       var list = checked();
-      if (!list.length) { qtyList.innerHTML = '<p class="qty-empty">Tick a product above to add a quantity for it.</p>'; return; }
+      if (!list.length) { qtyList.innerHTML = '<p class="qty-empty">' + escapeHTML(t('Tick a product above to add a quantity for it.')) + '</p>'; return; }
       qtyList.innerHTML = list.map(function (slug) {
         var p = bySlug[slug], v = qtyValues[slug] || { n: '', unit: 'kg' };
         var id = 'qty-' + slug;
         return '<div class="qty-row" data-qty="' + slug + '">' +
           '<label class="name" for="' + id + '"><span class="dot" style="--c:' + p.hex + '"></span>' + escapeHTML(p.name) + '</label>' +
-          '<input id="' + id + '" type="number" inputmode="decimal" min="0" step="any" placeholder="25" value="' + escapeHTML(v.n) + '" aria-label="Quantity of ' + escapeHTML(p.name) + '">' +
-          '<select aria-label="Unit for ' + escapeHTML(p.name) + '"><option value="kg"' + (v.unit === 'kg' ? ' selected' : '') + '>kg</option><option value="MT"' + (v.unit === 'MT' ? ' selected' : '') + '>MT</option></select>' +
+          '<input id="' + id + '" type="number" inputmode="decimal" min="0" step="any" placeholder="25" value="' + escapeHTML(v.n) + '" aria-label="' + escapeHTML(t('Quantity of {name}', { name: p.name })) + '">' +
+          '<select aria-label="' + escapeHTML(t('Unit for {name}', { name: p.name })) + '"><option value="kg"' + (v.unit === 'kg' ? ' selected' : '') + '>kg</option><option value="MT"' + (v.unit === 'MT' ? ' selected' : '') + '>MT</option></select>' +
           '</div>';
       }).join('');
     };
@@ -417,19 +433,19 @@
       var err = function (k) { return $('[data-error-for="' + k + '"]', form); };
       ['products', 'name', 'company', 'email', 'country'].forEach(function (k) { clearError(err(k), fields[k]); });
 
-      if (!checked().length) { setError(null, err('products'), 'Tick at least one product so we know what to quote.'); problems.push(picks[0]); }
-      if (!fields.country.value.trim()) { setError(fields.country, err('country'), 'Enter the destination country so we can quote freight.'); problems.push(fields.country); }
-      if (!fields.name.value.trim()) { setError(fields.name, err('name'), 'Enter your name.'); problems.push(fields.name); }
+      if (!checked().length) { setError(null, err('products'), t('Tick at least one product so we know what to quote.')); problems.push(picks[0]); }
+      if (!fields.country.value.trim()) { setError(fields.country, err('country'), t('Enter the destination country so we can quote freight.')); problems.push(fields.country); }
+      if (!fields.name.value.trim()) { setError(fields.name, err('name'), t('Enter your name.')); problems.push(fields.name); }
       if (channel === 'email') {
-        if (!fields.company.value.trim()) { setError(fields.company, err('company'), 'Enter your company name. Write “Individual” if you buy for yourself.'); problems.push(fields.company); }
+        if (!fields.company.value.trim()) { setError(fields.company, err('company'), t('Enter your company name. Write “Individual” if you buy for yourself.')); problems.push(fields.company); }
         var email = fields.email.value.trim();
-        if (!email) { setError(fields.email, err('email'), 'Enter an email address we can reply to.'); problems.push(fields.email); }
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { setError(fields.email, err('email'), 'Check the email address. It should look like name@company.com.'); problems.push(fields.email); }
+        if (!email) { setError(fields.email, err('email'), t('Enter an email address we can reply to.')); problems.push(fields.email); }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { setError(fields.email, err('email'), t('Check the email address. It should look like name@company.com.')); problems.push(fields.email); }
       }
 
       if (problems.length) {
         problems[0].focus();
-        status.textContent = problems.length === 1 ? 'One detail needs your attention.' : problems.length + ' details need your attention.';
+        status.textContent = problems.length === 1 ? t('One detail needs your attention.') : t('{n} details need your attention.', { n: problems.length });
         status.classList.add('is-error');
         return false;
       }
@@ -440,11 +456,12 @@
 
     var compose = function () {
       renderQty();
-      var lines = ['Enquiry from the Deva Exim website', '', 'Products:'];
+      // This message goes to the Deva Exim team, so it is always in English, whatever language the page is in.
+      var lines = ['Enquiry from the Deva Exim website (page language: ' + (doc.documentElement.lang || 'en') + ')', '', 'Products:'];
       checked().forEach(function (slug) {
         var v = qtyValues[slug];
         var qty = v && v.n ? v.n + ' ' + v.unit : 'quantity to discuss';
-        lines.push('- ' + bySlug[slug].name + ': ' + qty);
+        lines.push('- ' + bySlug[slug].en + ': ' + qty);
       });
       lines.push('');
       var dest = fields.country.value.trim() + (fields.port.value.trim() ? ' (' + fields.port.value.trim() + ')' : '');
@@ -462,7 +479,7 @@
     };
 
     var subjectLine = function () {
-      var names = checked().map(function (s) { return bySlug[s].short; });
+      var names = checked().map(function (s) { return bySlug[s].enShort; });
       return 'Enquiry: ' + (names.length > 3 ? names.slice(0, 3).join(', ') + ' and ' + (names.length - 3) + ' more' : names.join(', '));
     };
 
@@ -485,20 +502,20 @@
         var data = new FormData(form);
         data.append('summary', text);
         data.append('_subject', subjectLine());
-        status.textContent = 'Sending your enquiry…';
+        status.textContent = t('Sending your enquiry…');
         fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
           .then(function (r) { if (!r.ok) throw new Error(r.status); })
-          .then(function () { enquiry.clear(); showSent('We have received your enquiry and will reply by email.'); })
+          .then(function () { enquiry.clear(); showSent(t('We have received your enquiry and will reply by email.')); })
           .catch(function () {
             status.classList.add('is-error');
-            status.textContent = 'Your enquiry did not go through. Check your connection and try again, or send it on WhatsApp.';
+            status.textContent = t('Your enquiry did not go through. Check your connection and try again, or send it on WhatsApp.');
           });
         return;
       }
       var to = form.getAttribute('data-email');
       window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subjectLine()) + '&body=' + encodeURIComponent(text);
       status.classList.remove('is-error');
-      status.textContent = 'Your email app should now open with the enquiry ready to send. If nothing opened, send it on WhatsApp or email us at ' + to + '.';
+      status.textContent = t('Your email app should now open with the enquiry ready to send. If nothing opened, send it on WhatsApp or email us at {email}.', { email: to });
     });
 
     var waBtn = $('[data-send-whatsapp]', form);
@@ -508,7 +525,7 @@
         var url = 'https://wa.me/' + form.getAttribute('data-whatsapp') + '?text=' + encodeURIComponent(compose());
         window.open(url, '_blank', 'noopener');
         status.classList.remove('is-error');
-        status.textContent = 'WhatsApp should open in a new tab with your enquiry filled in. Press send there to reach us.';
+        status.textContent = t('WhatsApp should open in a new tab with your enquiry filled in. Press send there to reach us.');
       });
     }
 
@@ -526,16 +543,16 @@
     var label = $('.copy-label', btn) || btn;
     var original = label.textContent;
     var done = function () {
-      label.textContent = 'Copied';
+      label.textContent = t('Copied');
       setTimeout(function () { label.textContent = original; }, 1600);
     };
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(value).then(done, function () { toast('Copy did not work. Select the text and copy it instead.'); });
+      navigator.clipboard.writeText(value).then(done, function () { toast(t('Copy did not work. Select the text and copy it instead.')); });
     } else {
       var ta = doc.createElement('textarea');
       ta.value = value; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
       doc.body.appendChild(ta); ta.select();
-      try { doc.execCommand('copy'); done(); } catch (err) { toast('Copy did not work. Select the text and copy it instead.'); }
+      try { doc.execCommand('copy'); done(); } catch (err) { toast(t('Copy did not work. Select the text and copy it instead.')); }
       doc.body.removeChild(ta);
     }
   });
@@ -545,11 +562,56 @@
   // The date is stamped on every print, including Ctrl+P, not only the button.
   window.addEventListener('beforeprint', function () {
     var stamp = $('[data-print-date]');
-    if (stamp) stamp.textContent = ', printed ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    var when = new Date().toLocaleDateString(isEnglish ? 'en-GB' : doc.documentElement.lang, { day: 'numeric', month: 'long', year: 'numeric' });
+    if (stamp) stamp.textContent = t(', printed {date}', { date: when });
   });
   doc.addEventListener('click', function (e) {
     if (e.target.closest('[data-print]')) window.print();
   });
+
+  // ---------- language menu ----------
+
+  var langMenu = $('[data-lang-menu]');
+  if (langMenu) {
+    // close the dropdown on an outside click or Escape
+    doc.addEventListener('click', function (e) { if (langMenu.open && !langMenu.contains(e.target)) langMenu.open = false; });
+    doc.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && langMenu.open) { langMenu.open = false; $('summary', langMenu).focus(); }
+    });
+  }
+  // remember the visitor's choice, so we only offer a language once
+  doc.addEventListener('click', function (e) {
+    var choice = e.target.closest('[data-lang-choice]');
+    if (choice) storage.set('deva-lang', choice.getAttribute('data-lang-choice'));
+  });
+
+  // On English pages, offer the visitor's browser language once if we have it.
+  (function () {
+    var offersEl = doc.getElementById('deva-langs');
+    if (!offersEl || !isEnglish || storage.get('deva-lang')) return;
+    var offers = [];
+    try { offers = JSON.parse(offersEl.textContent); } catch (e) { return; }
+    var prefs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || '']).map(function (l) { return String(l).toLowerCase().split('-')[0]; });
+    var offer = null;
+    for (var i = 0; i < prefs.length && !offer; i++) {
+      if (prefs[i] === 'en') break;                      // English comes first: no need to offer anything
+      offer = offers.filter(function (o) { return o.code === prefs[i]; })[0] || null;
+    }
+    if (!offer) return;
+    var bar = doc.createElement('div');
+    bar.className = 'lang-offer';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('lang', offer.lang);
+    bar.setAttribute('dir', offer.code === 'ar' ? 'rtl' : 'ltr');
+    bar.innerHTML = '<p>' + escapeHTML(offer.text) + '</p><a class="btn btn--haldi btn--sm" data-lang-choice="' + offer.code + '" href="' + escapeHTML(offer.href) + '">' + escapeHTML(offer.cta) + '</a>' +
+      '<button class="icon-btn" type="button" data-lang-dismiss aria-label="' + escapeHTML(offer.close || 'Close') + '"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>';
+    var mainEl = $('#main');
+    if (!mainEl) return;
+    mainEl.parentNode.insertBefore(bar, mainEl);
+    bar.addEventListener('click', function (e) {
+      if (e.target.closest('[data-lang-dismiss]')) { storage.set('deva-lang', 'en'); bar.remove(); }
+    });
+  })();
 
   // ---------- review mode: highlight content that still needs confirmation ----------
 

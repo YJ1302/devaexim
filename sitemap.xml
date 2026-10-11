@@ -1,20 +1,479 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.devaexim.co.in/</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/ashwagandha-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/shatavari-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/neem-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/tulsi-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/brahmi-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/triphala-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/moringa-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/moringa-dried-leaves.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/turmeric-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/products/ginger-powder.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/quality.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/export.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/about.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/contact.html</loc><lastmod>2026-10-11</lastmod></url>
-  <url><loc>https://www.devaexim.co.in/privacy.html</loc><lastmod>2026-10-11</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.devaexim.co.in/</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/ashwagandha-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/ashwagandha-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/ashwagandha-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/ashwagandha-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ashwagandha-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ashwagandha-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/shatavari-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/shatavari-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/shatavari-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/shatavari-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/shatavari-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/shatavari-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/neem-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/neem-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/neem-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/neem-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/neem-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/neem-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/tulsi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/tulsi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/tulsi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/tulsi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/tulsi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/tulsi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/brahmi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/brahmi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/brahmi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/brahmi-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/brahmi-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/brahmi-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/triphala-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/triphala-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/triphala-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/triphala-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/triphala-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/triphala-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/moringa-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/moringa-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/moringa-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/moringa-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/moringa-dried-leaves.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/moringa-dried-leaves.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/moringa-dried-leaves.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/moringa-dried-leaves.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/moringa-dried-leaves.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/moringa-dried-leaves.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/turmeric-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/turmeric-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/turmeric-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/turmeric-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/turmeric-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/turmeric-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/products/ginger-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/products/ginger-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/products/ginger-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/products/ginger-powder.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/products/ginger-powder.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/products/ginger-powder.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/quality.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/quality.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/quality.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/quality.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/quality.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/quality.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/quality.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/quality.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/quality.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/export.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/export.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/export.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/export.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/export.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/export.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/export.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/export.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/export.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/export.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/export.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/export.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/export.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/export.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/export.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/export.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/export.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/export.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/export.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/export.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/export.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/export.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/export.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/export.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/about.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/about.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/about.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/about.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/about.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/about.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/about.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/about.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/about.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/contact.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/contact.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/contact.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/contact.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/contact.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/contact.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/contact.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/contact.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/privacy.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/privacy.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/de/privacy.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/privacy.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/ar/privacy.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/privacy.html"/>
+  </url>
+  <url><loc>https://www.devaexim.co.in/hi/privacy.html</loc><lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.devaexim.co.in/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.devaexim.co.in/de/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.devaexim.co.in/ar/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.devaexim.co.in/hi/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.devaexim.co.in/privacy.html"/>
+  </url>
 </urlset>

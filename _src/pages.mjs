@@ -652,14 +652,14 @@ ${pageHead({
                 <label for="f-incoterm">Incoterm <span class="opt">(optional)</span></label>
                 <select id="f-incoterm" name="incoterm">
                   <option value="">Not sure yet, please advise</option>
-                  <option>EXW Pune</option><option>FOB Nhava Sheva</option><option>CFR</option><option>CIF</option>
+                  <option value="EXW Pune">EXW Pune</option><option value="FOB Nhava Sheva">FOB Nhava Sheva</option><option value="CFR">CFR</option><option value="CIF">CIF</option>
                 </select>
               </div>
               <div class="field">
                 <label for="f-packaging">Packaging <span class="opt">(optional)</span></label>
                 <select id="f-packaging" name="packaging">
                   <option value="">Standard 25 kg bags</option>
-                  <option>Kraft paper bags</option><option>Fibre drums</option><option>Retail or private label packs</option>
+                  <option value="Kraft paper bags">Kraft paper bags</option><option value="Fibre drums">Fibre drums</option><option value="Retail or private label packs">Retail or private label packs</option>
                 </select>
               </div>
             </div>
@@ -763,7 +763,7 @@ ${pageHead({
 // ======================================================================
 
 export function privacy(ctx) {
-  const updated = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  const updated = new Date().toISOString().slice(0, 10);
   const body = html`
 ${pageHead({ title: 'Privacy note', lede: `Last updated ${updated}.`, crumbs: [['Home', 'index.html'], ['Privacy']] })}
 <section class="section">
