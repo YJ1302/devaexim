@@ -1,7 +1,8 @@
 # Builds the site and publishes dist/ to GitHub Pages.
 #
 # One-time setup: repository Settings > Pages > Build and deployment > Source: "GitHub Actions".
-# Deploys on every push to main, or by hand from the Actions tab ("Deploy site" > "Run workflow").
+# NOT IN USE: the live site is on Vercel (see vercel.json), which rebuilds on every push to main.
+# This workflow is kept as a manual alternative: Actions tab > "Deploy site" > "Run workflow".
 #
 # When the real domain is ready: set SITE_URL to it (for example https://www.example.in) and
 # SITE_BASE to "/" below, and add the domain in Settings > Pages > Custom domain.
@@ -10,8 +11,6 @@ name: Deploy site
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
 
 permissions:
   contents: read

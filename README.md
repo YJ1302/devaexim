@@ -115,7 +115,9 @@ The site is static, so any host works. Every build writes the public files, and 
 
 **First, set the domain.** Put the final address in `site.url` in `_src/data.mjs` (for example `https://www.devaexim.in`) and rebuild. It is used for canonical links, the sitemap and the social previews.
 
-Then pick a host:
+**The live site is on Vercel** at https://devaeximinc.vercel.app. `vercel.json` makes Vercel run the build and publish only `dist/`, so `docs/`, `_src/` and the notes are never public. It redeploys on every push to `main`. When the real domain is connected in Vercel, change `SITE_URL` in the `buildCommand` in `vercel.json` to it.
+
+Other hosts also work:
 
 - **GitHub Pages** (free, uses this repository):
   1. In the repository, open Settings, then Pages, and set the Source to **GitHub Actions**.
